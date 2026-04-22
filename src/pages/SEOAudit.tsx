@@ -1,115 +1,119 @@
 import React from 'react';
-import { Search, AlertTriangle, LightbulbIcon, Link as LinkIcon, Video } from 'lucide-react';
+import { LineChart, AlertTriangle, CheckCircle2, RefreshCw } from 'lucide-react';
 
-export default function SEOAudit() {
+export default function SEOAudit({ navigate, previousPage }: { navigate: (id: number) => void, previousPage?: number | null }) {
+  // If they came from Paid Ads Growth (id: 3), the button goes text to WhatsApp. Otherwise, Book Your Audit.
+  const isFromPaidAds = previousPage === 3;
+
   return (
     <div className="space-y-10">
-      <header className="space-y-3 border-b border-slate-800 pb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold tracking-wider rounded-full uppercase border border-amber-500/20">
+      <header className="space-y-4 border-b border-slate-200 pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 4
         </div>
-        <h2 className="text-4xl font-bold tracking-tight text-white">Website SEO Audit</h2>
-        <p className="text-slate-400 text-lg">Critical Gaps & Required Corrections for JHA360.com</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Website & SEO Audit</h2>
+        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+          Critical gap analysis of JHA360.com to ensure organic traffic capture matches paid ad momentum.
+        </p>
       </header>
 
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-lg mb-8">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <span className="text-sm font-semibold text-slate-500 uppercase">Domain Target</span>
-            <p className="text-xl font-bold text-white flex items-center gap-2"><Search className="text-blue-500 w-5 h-5"/> JHA360.com</p>
+      <div className="bg-rose-50 border border-rose-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+        <h3 className="text-xl font-bold text-rose-900 flex items-center gap-2 mb-4">
+          <AlertTriangle className="text-rose-600" /> Current State Assessment (Critical Bottleneck)
+        </h3>
+        <p className="text-rose-800 leading-relaxed font-medium text-base sm:text-lg">
+          The current JHA360 website acts strictly as a static digital brochure rather than a dynamic lead capturing engine. It lacks the structural depth, top-of-funnel content pillars, and localized keyword optimization required to organically capture businesses actively searching for <em className="italic mix-blend-multiply">"increase google maps footfall"</em> or <em className="italic mix-blend-multiply">"360 virtual tours in Mumbai."</em> This creates a dangerous reliance solely on paid ad spend.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-xl shadow-inner">
+              1
+            </div>
+            <h3 className="text-lg font-bold text-blue-950">Architecture & Service Depth</h3>
           </div>
-          <div className="h-px w-full md:h-12 md:w-px bg-slate-800"></div>
-          <div className="flex-1">
-            <span className="text-sm font-semibold text-slate-500 uppercase">Primary Objective</span>
-            <p className="text-slate-300">Resolve technical and structural bottlenecks preventing organic search dominance in the Mumbai/Pune local business market.</p>
+          <div className="space-y-4">
+            <p className="text-sm font-bold text-rose-600 uppercase tracking-widest border-b border-rose-100 pb-1">The Problem</p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">A flat site structure explicitly prevents Google from recognizing thematic authority. High-value, diverse services are dumped onto a single page rather than possessing dedicated, highly-optimized landing zones.</p>
+            
+            <p className="text-sm font-bold text-emerald-600 uppercase tracking-widest border-b border-emerald-100 pb-1 mt-6">The Solution (URL Restructure)</p>
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm font-mono text-slate-700 shadow-inner overflow-x-auto whitespace-nowrap">
+              /services/google-street-view-trusted<br/>
+              /services/real-estate-walkthroughs<br/>
+              /services/retail-store-360-tours
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-xl shadow-inner">
+              2
+            </div>
+            <h3 className="text-lg font-bold text-blue-950">Localized Landing Page Engine</h3>
+          </div>
+          <div className="space-y-4">
+            <p className="text-sm font-bold text-rose-600 uppercase tracking-widest border-b border-rose-100 pb-1">The Problem</p>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">JHA360 operates heavily and aggressively in specific infrastructure corridors (Mumbai, Navi Mumbai, Pune), yet surface-level audits reveal a total absence of location-specific geo-targeting queries.</p>
+            
+            <p className="text-sm font-bold text-emerald-600 uppercase tracking-widest border-b border-emerald-100 pb-1 mt-6">The Solution (Geo-Silos)</p>
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm font-mono text-slate-700 shadow-inner overflow-x-auto whitespace-nowrap">
+              /locations/virtual-tours-navi-mumbai<br/>
+              /locations/360-photography-pune
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm lg:col-span-2">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-xl shadow-inner">
+              3
+            </div>
+            <h3 className="text-xl font-bold text-blue-950">Top-of-Funnel (ToFu) Content Strategy</h3>
+          </div>
+          <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">Business owners rarely wake up and explicitly search for "360 photographers". They search for their underlying business problem: <em className="text-slate-800 font-semibold bg-orange-50 px-1">"Why isn't my business showing up on Google Maps?"</em> We must intercept those queries.</p>
+          <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-6 shadow-inner">
+            <div className="bg-white p-5 rounded-lg border border-blue-100 shadow-sm">
+              <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-widest mb-2 bg-blue-100 px-2 py-1 rounded inline-block">Content Pillar A</p>
+              <h4 className="font-bold text-blue-950 text-lg mb-2">Educational Blog Pipeline</h4>
+              <ul className="mt-2 text-sm text-slate-600 space-y-1.5 list-disc pl-5">
+                <li>"How to Optimize Google Business Profile in 2026 for Restaurants"</li>
+                <li>"The Exact ROI of Google Street View for Mumbai Retailers"</li>
+              </ul>
+            </div>
+            <div className="bg-white p-5 rounded-lg border border-blue-100 shadow-sm">
+              <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-widest mb-2 bg-blue-100 px-2 py-1 rounded inline-block">Content Pillar B</p>
+              <h4 className="font-bold text-blue-950 text-lg mb-2">Case Study Proof Integration</h4>
+              <ul className="mt-2 text-sm text-slate-600 space-y-1.5 list-disc pl-5">
+                <li>Deep-dive qualitative breakdowns of the 27 successful past projects.</li>
+                <li>Dashboard screenshots highlighting specific metric jumps (e.g., +28% visibility in 30 days).</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Gap 1 */}
-        <div className="bg-slate-900/50 border border-rose-500/20 rounded-2xl p-8 relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-500 to-orange-500 rounded-t-2xl"></div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-start gap-3">
-            <span className="bg-rose-500/20 text-rose-500 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">1</span>
-            Shallow Site Architecture (The "Single Page" Problem)
+      <div className="bg-gradient-to-r from-blue-950 to-blue-900 border border-blue-800 text-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="relative z-10 flex-1">
+          <h3 className="text-xl sm:text-2xl font-bold flex items-center gap-3 mb-3">
+            <RefreshCw className="text-orange-400 w-7 h-7 shrink-0" /> Seamless Funnel Integration
           </h3>
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2 text-rose-400 font-semibold"><AlertTriangle className="w-4 h-4"/> The Issue</div>
-              <p className="text-slate-400 text-sm">Currently, all major projects (e.g., GARG SKY Ajivali, Tithee Banquets, ZenXFit) and industries are grouped together. When multiple industries share a single page, Google becomes confused about what that specific page is actually trying to rank for (keyword cannibalization).</p>
-            </div>
-            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
-              <div className="flex items-center gap-2 mb-2 text-emerald-400 font-semibold"><LightbulbIcon className="w-4 h-4"/> Required Correction</div>
-              <p className="text-slate-300 text-sm mb-3">The website architecture must be expanded. Build dedicated, individual landing pages for each high-value vertical.</p>
-              <code className="block bg-slate-900 text-emerald-300 text-xs p-3 rounded font-mono break-all">
-                jha360.com/real-estate-virtual-tours<br/>
-                jha360.com/gym-360-photography
-              </code>
-            </div>
-          </div>
+          <p className="text-blue-100 text-sm sm:text-base leading-relaxed">Once high-quality organic traffic lands on these newly optimized architecture pages, they must be aggressively driven directly into the high-intent lead capture workflow mapped out in the Meta Ads Strategy.</p>
         </div>
-
-        {/* Gap 2 */}
-        <div className="bg-slate-900/50 border border-orange-500/20 rounded-2xl p-8 relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-500 rounded-t-2xl"></div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-start gap-3">
-            <span className="bg-orange-500/20 text-orange-500 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">2</span>
-            Missing Top-of-Funnel Content (Losing the "Discovery" Phase)
-          </h3>
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2 text-orange-400 font-semibold"><AlertTriangle className="w-4 h-4"/> The Issue</div>
-              <p className="text-slate-400 text-sm">The current website is only built for people who already know they want a "360 virtual tour". It completely misses the thousands of business owners searching for general growth solutions, meaning competitors capture those leads first.</p>
-            </div>
-            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
-              <div className="flex items-center gap-2 mb-2 text-emerald-400 font-semibold"><LightbulbIcon className="w-4 h-4"/> Required Correction</div>
-              <p className="text-slate-300 text-sm mb-3">Deploy a localized "Resource" or "Blog" section that targets problem-aware searches.</p>
-              <div className="bg-slate-900 text-slate-400 text-xs p-3 rounded border border-slate-800 italic">
-                Example: "How to Increase Gym Walk-ins in Navi Mumbai," or "Why NRI Real Estate Investors Ignore Unverified Google Listings."
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Gap 3 */}
-        <div className="bg-slate-900/50 border border-blue-500/20 rounded-2xl p-8 relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-t-2xl"></div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-start gap-3">
-            <span className="bg-blue-500/20 text-blue-500 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0"><LinkIcon className="w-4 h-4"/></span>
-            Underdeveloped Backlink Profile & Local Citations
-          </h3>
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2 text-blue-400 font-semibold"><AlertTriangle className="w-4 h-4"/> The Issue</div>
-              <p className="text-slate-400 text-sm">Because JHA360 is a newer domain (established in 2025), it lacks the Domain Authority (DA) required to outrank older, legacy photography studios. Google needs to see other reputable local websites pointing to JHA360.</p>
-            </div>
-            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
-              <div className="flex items-center gap-2 mb-2 text-emerald-400 font-semibold"><LightbulbIcon className="w-4 h-4"/> Required Correction</div>
-              <p className="text-slate-300 text-sm">Initiate a localized backlinking and citation campaign. Ensure JHA360 has consistent NAP (Name, Address, Phone number) data across all Maharashtra business directories. Secure backlinks from local real estate blogs and Navi Mumbai business chambers.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Gap 4 */}
-        <div className="bg-slate-900/50 border border-purple-500/20 rounded-2xl p-8 relative">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-t-2xl"></div>
-          <h3 className="text-xl font-bold text-white mb-6 flex items-start gap-3">
-            <span className="bg-purple-500/20 text-purple-500 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0"><Video className="w-4 h-4"/></span>
-            Underutilized Video SEO (Time-on-Page Deficit)
-          </h3>
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2 text-purple-400 font-semibold"><AlertTriangle className="w-4 h-4"/> The Issue</div>
-              <p className="text-slate-400 text-sm">While the site deals in visual walkthroughs, it lacks embedded, high-retention video content. Google uses "Dwell Time" as a massive ranking factor. If users click away quickly, rankings drop.</p>
-            </div>
-            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
-              <div className="flex items-center gap-2 mb-2 text-emerald-400 font-semibold"><LightbulbIcon className="w-4 h-4"/> The Savoir Studio Fix</div>
-              <p className="text-slate-300 text-sm">Embed the high-quality Talking Head and Testimonial videos we produce directly onto the JHA360 website via a branded YouTube channel.</p>
-              <p className="text-slate-400 text-xs mt-2 italic">A 2-minute founder video on the homepage will drastically increase the average time-on-page, forcing Google to view the site as highly relevant and authoritative.</p>
-            </div>
-          </div>
-        </div>
+        <button 
+          onClick={() => {
+            const message = encodeURIComponent(isFromPaidAds 
+              ? "Hello Piyush! I am continuing from the Paid Ads module and want to discuss next steps for scaling JHA360." 
+              : "Hello Piyush! I reviewed the Strategy Pipeline and would like to book a free Website & SEO Audit for my business.");
+            window.open(`https://wa.me/917400310443?text=${message}`, '_blank', 'noopener,noreferrer');
+          }} 
+          className="shrink-0 relative z-10 w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-extrabold transition-transform active:scale-95 shadow-lg shadow-orange-500/20 text-center"
+        >
+          {isFromPaidAds ? 'Connect on WhatsApp' : 'Book Free Strategy Audit'}
+        </button>
       </div>
     </div>
   );

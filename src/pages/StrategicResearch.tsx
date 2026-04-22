@@ -1,98 +1,179 @@
 import React from 'react';
-import { Target, Users, LayoutDashboard, Award } from 'lucide-react';
+import { Target, Users, LayoutDashboard, Award, ArrowRight, Lightbulb, TrendingUp } from 'lucide-react';
 
-export default function StrategicResearch() {
+export default function StrategicResearch({ navigate }: { navigate: (id: number) => void }) {
   return (
-    <div className="space-y-10">
-      <header className="space-y-3 border-b border-slate-800 pb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold tracking-wider rounded-full uppercase border border-amber-500/20">
+    <div className="space-y-12">
+      <header className="space-y-4 border-b border-slate-200 pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 1
         </div>
-        <h2 className="text-4xl font-bold tracking-tight text-white">Strategic Research Report</h2>
-        <p className="text-slate-400 text-lg">Business Model Analysis and Meta Ad Action Plan</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Strategic Research Report</h2>
+        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+          Business Model Analysis and Meta Ad Action Plan to scale JHA360 across target corridors.
+        </p>
       </header>
 
-      <div className="grid grid-cols-1 gap-6">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-slate-100 flex items-center gap-3 mb-6">
-            <Award className="text-amber-500 w-6 h-6" /> Leadership Profile: Piyush N Jha
+      <div className="grid grid-cols-1 gap-8">
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <Award className="text-orange-500 w-7 h-7" /> Leadership Profile: Ex-VP & NITI Aayog Mentor
           </h3>
-          <p className="text-slate-300 mb-4">
-            Seasoned entrepreneur and digital transformation leader with a specialized focus on immersive technology.
+          <p className="text-slate-600 mb-6 text-lg sm:text-xl font-medium leading-relaxed">
+            Piyush is not a small-time business owner; he is an Ex-Vice President and Ex-Chief Business Officer. By centering strategy around boardrooms, budgets, and enterprise data, we strip out trivial agency terminology.
           </p>
-          <ul className="space-y-3 text-slate-400">
-            <li><strong className="text-white">Professional Background:</strong> Over 15 years of experience in business strategy, sales, and EdTech.</li>
-            <li><strong className="text-white">Current Roles:</strong> Co-Founder & Managing Partner of New Bharat Skills and the creator of JHA360.</li>
-            <li><strong className="text-white">Credentials:</strong> Accredited Mentor with AIC-BIMTECH (Atal Innovation Mission, NITI Aayog).</li>
-            <li><strong className="text-white">Core Expertise:</strong> Digital walkthroughs, business visibility, sales strategy, and leadership development.</li>
-            <li><strong className="text-white">Recent Track Record:</strong> Successfully completed 27 projects in recent months across various categories including real estate, gyms, resorts, and corporate offices.</li>
-          </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <ul className="space-y-4 text-slate-600">
+              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Professional DNA:</strong> Ex-VP and Regional Manager with almost 8 years handling Background Verification, Due Diligence, and Corporate Risk Mitigation.</div></li>
+              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Current Roles:</strong> Co-Founder & Managing Partner of New Bharat Skills. Visionary creator and lead strategist behind JHA360.</div></li>
+              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">The Authority Hook:</strong> Officially Accredited Mentor with AIC-BIMTECH under the prestigious Atal Innovation Mission (NITI Aayog).</div></li>
+            </ul>
+            <ul className="space-y-4 text-slate-600">
+              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Core Metrics Focus:</strong> Customer Acquisition Cost (CAC), pipeline conversion rates, and dramatically accelerating Lead Velocity by removing offline friction.</div></li>
+              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Recent Execution:</strong> Engineered and delivered 27 high-fidelity immersive projects within recent months across real estate, premium gyms, and corporate campuses.</div></li>
+            </ul>
+          </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-slate-100 flex items-center gap-3 mb-6">
-            <LayoutDashboard className="text-blue-500 w-6 h-6" /> JHA360 Business Model Analysis
-          </h3>
-          <p className="text-slate-300 mb-4">
-            JHA360 operates as a specialized B2B "Digital Walkthrough" service provider.
-          </p>
-          <ul className="space-y-3 text-slate-400 mb-6">
-            <li><strong className="text-white">Core Value Proposition:</strong> Increasing business visibility and credibility through immersive 360 Degree virtual tours on Google Maps and other digital platforms.</li>
-            <li><strong className="text-white">The Problem It Solves:</strong> Helps businesses stand out in a "digital-first" economy where traditional photos are no longer enough to build instant trust.</li>
-          </ul>
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4 border-b border-slate-100 pb-4">
+            <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3">
+              <LayoutDashboard className="text-blue-500 w-7 h-7" /> In-Depth Business Model Analysis
+            </h3>
+            <button onClick={() => navigate(3)} className="inline-flex shrink-0 text-xs items-center justify-center gap-1.5 text-blue-600 hover:text-blue-700 font-bold bg-blue-50 hover:bg-blue-100 px-4 py-2 sm:px-3 sm:py-1.5 rounded-lg transition-colors border border-blue-200 w-full sm:w-auto">
+              Jump to Ad Funnel <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
           
-          <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
-            <h4 className="text-white font-semibold mb-4">Target Verticals:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex gap-3"><span className="text-blue-500">→</span> <div><strong className="text-white">Real Estate:</strong> High-end residential and commercial walkthroughs.</div></div>
-              <div className="flex gap-3"><span className="text-blue-500">→</span> <div><strong className="text-white">Hospitality:</strong> Detailed tours for resorts, restaurants, and banquet halls.</div></div>
-              <div className="flex gap-3"><span className="text-blue-500">→</span> <div><strong className="text-white">Retail & Fitness:</strong> Showcasing gyms, supermarkets, and specialty shops.</div></div>
-              <div className="flex gap-3"><span className="text-blue-500">→</span> <div><strong className="text-white">Corporate:</strong> Playzones and professional office spaces.</div></div>
+          <p className="text-slate-600 mb-8 text-lg leading-relaxed">
+            JHA360 operates not merely as a photography agency, but as a specialized B2B <strong>"Digital Risk Mitigation"</strong> value-adder. The service explicitly transforms static digital footprints into high-conversion assets designed to lower the friction of a client's sales cycle.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100 shadow-inner">
+              <h4 className="text-blue-950 font-bold mb-3 flex items-center gap-2"><Lightbulb className="w-5 h-5 text-orange-500"/> Core Value Proposition (Boardroom Pitch)</h4>
+              <p className="text-slate-700 text-sm leading-relaxed mb-4">
+                We definitively solve the "Proof of Quality" problem. By engineering immersive 360° virtual tours natively integrated into Google Maps, we explicitly lower Customer Acquisition Cost (CAC) by removing the apprehension phase from the consumer's buying journey.
+              </p>
+              <button onClick={() => navigate(4)} className="text-orange-600 hover:text-orange-700 font-bold text-xs uppercase tracking-wider inline-flex items-center gap-1 active:scale-95 transition-transform">
+                Review SEO Blockers <ArrowRight className="w-3 h-3"/>
+              </button>
+            </div>
+            <div className="bg-orange-50/50 p-6 rounded-xl border border-orange-100 shadow-inner">
+              <h4 className="text-blue-950 font-bold mb-3 flex items-center gap-2"><TrendingUp className="w-5 h-5 text-orange-500"/> The Velocity Friction</h4>
+              <p className="text-slate-700 text-sm leading-relaxed mb-3">
+                In a "digital-first" economy, traditional 2D photos create sales cycle friction because of consumer skepticism. If a customer cannot physically validate a premium gym or luxury property through their phone, Lead Velocity drops and conversion costs spike.
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-3">
+              <div>
+                <h4 className="text-blue-950 font-extrabold text-xl">Target Verticals & TAM</h4>
+                <p className="text-sm text-slate-500 mt-1">Total Addressable Market segmentation for immediate scaling.</p>
+              </div>
+              <button onClick={() => navigate(2)} className="text-orange-600 hover:text-orange-700 text-sm font-bold hover:underline shrink-0">
+                View Competitor Overlap &rarr;
+              </button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="flex flex-col gap-3 bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold text-xl">1</div>
+                <div><strong className="text-slate-900 font-bold block mb-1">Real Estate</strong><span className="text-slate-500 text-xs sm:text-sm leading-tight block">High-end residential, show flats, and large commercial lease spaces.</span></div>
+              </div>
+              <div className="flex flex-col gap-3 bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold text-xl">2</div>
+                <div><strong className="text-slate-900 font-bold block mb-1">Hospitality</strong><span className="text-slate-500 text-xs sm:text-sm leading-tight block">Boutique resorts, premium restaurants, wedding banquet halls.</span></div>
+              </div>
+              <div className="flex flex-col gap-3 bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold text-xl">3</div>
+                <div><strong className="text-slate-900 font-bold block mb-1">Retail & Fitness</strong><span className="text-slate-500 text-xs sm:text-sm leading-tight block">Premium gyms, massive supermarkets, automobile showrooms.</span></div>
+              </div>
+              <div className="flex flex-col gap-3 bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold text-xl">4</div>
+                <div><strong className="text-slate-900 font-bold block mb-1">Institutions</strong><span className="text-slate-500 text-xs sm:text-sm leading-tight block">Corporate hubs, coworking spaces, STEM labs, and schools.</span></div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-slate-100 flex items-center gap-3 mb-6">
-            <Target className="text-emerald-500 w-6 h-6" /> Strategic Implementation Roadmap
+        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3 mb-8">
+            <Target className="text-emerald-500 w-7 h-7" /> Strategic Implementation Roadmap
           </h3>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm text-slate-400">
-              <thead className="text-xs uppercase bg-slate-950 text-slate-300 border-b border-slate-800">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-inner">
+            <table className="w-full text-left text-sm text-slate-600 min-w-[700px]">
+              <thead className="bg-slate-50 text-slate-500 border-b border-slate-200 text-xs uppercase tracking-wider font-bold">
                 <tr>
-                  <th className="px-6 py-4 font-bold border-r border-slate-800">Phase</th>
-                  <th className="px-6 py-4 font-bold border-r border-slate-800">Activity</th>
-                  <th className="px-6 py-4 font-bold">Goal</th>
+                  <th className="px-6 py-5 border-r border-slate-200 w-1/4">Phasing & Timeline</th>
+                  <th className="px-6 py-5 border-r border-slate-200 w-1/2">Core Activity & Execution</th>
+                  <th className="px-6 py-5 w-1/4">Primary Business Goal</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr className="border-b border-slate-800 hover:bg-slate-950/50">
-                  <td className="px-6 py-4 font-medium text-white border-r border-slate-800">Phase 1: Production</td>
-                  <td className="px-6 py-4 border-r border-slate-800">Capture "Behind the Scenes" footage of Piyush on-site with 360 gear.</td>
-                  <td className="px-6 py-4">Build Founder Authority.</td>
+              <tbody className="divide-y divide-slate-200">
+                <tr className="hover:bg-slate-50/50 transition-colors">
+                  <td className="px-6 py-5 border-r border-slate-200">
+                    <strong className="text-slate-900 block text-base mb-1">Phase 1: Production</strong>
+                    <span className="text-orange-500 font-medium text-xs bg-orange-50 px-2 py-1 rounded inline-block">Weeks 1-3</span>
+                  </td>
+                  <td className="px-6 py-5 border-r border-slate-200 text-sm leading-relaxed">
+                    Capture raw, authentic "Behind the Scenes" footage of Piyush on-site assembling 360 gear, directly guiding teams, and securing final shots. Build the content repository required for the 5-Level Meta Ads playbook.
+                  </td>
+                  <td className="px-6 py-5 text-sm font-medium text-blue-900 bg-blue-50/30">
+                    Establish Unshakable Founder Authority & Trust.
+                  </td>
                 </tr>
-                <tr className="border-b border-slate-800 hover:bg-slate-950/50">
-                  <td className="px-6 py-4 font-medium text-white border-r border-slate-800">Phase 2: Launch</td>
-                  <td className="px-6 py-4 border-r border-slate-800">Deploy "Niche-Specific" ads targeting Real Estate and Hospitality.</td>
-                  <td className="px-6 py-4">High-quality lead generation.</td>
+                <tr className="hover:bg-slate-50/50 transition-colors">
+                  <td className="px-6 py-5 border-r border-slate-200">
+                    <strong className="text-slate-900 block text-base mb-1">Phase 2: Launch</strong>
+                    <span className="text-orange-500 font-medium text-xs bg-orange-50 px-2 py-1 rounded inline-block">Weeks 4-8</span>
+                  </td>
+                  <td className="px-6 py-5 border-r border-slate-200 text-sm leading-relaxed">
+                    Deploy highly-segmented "Niche-Specific" ad funnels targeting Real Estate (Level 4: Screen Dive) and Hospitality (Level 5: Easter Egg). Utilize precision audience building across Mumbai/Pune target corridors.
+                  </td>
+                  <td className="px-6 py-5 text-sm font-medium text-emerald-700 bg-emerald-50/30">
+                    Immediate High-Quality Lead Generation & ROI.
+                  </td>
                 </tr>
-                <tr className="hover:bg-slate-950/50">
-                  <td className="px-6 py-4 font-medium text-white border-r border-slate-800">Phase 3: Scaling</td>
-                  <td className="px-6 py-4 border-r border-slate-800">Use the "Official Google Street View Trusted" badge as a primary hook.</td>
-                  <td className="px-6 py-4">Differentiate from amateur photographers.</td>
+                <tr className="hover:bg-slate-50/50 transition-colors">
+                  <td className="px-6 py-5 border-r border-slate-200">
+                    <strong className="text-slate-900 block text-base mb-1">Phase 3: Scaling</strong>
+                    <span className="text-orange-500 font-medium text-xs bg-orange-50 px-2 py-1 rounded inline-block">Month 3+</span>
+                  </td>
+                  <td className="px-6 py-5 border-r border-slate-200 text-sm leading-relaxed">
+                    Aggressively leverage the <strong>"Official Google Street View Trusted"</strong> badge as a primary psychological hook in retargeting campaigns. Scale ad spend vertically on winning creatives and roll out out-of-ecosystem campaigns (LinkedIn B2B).
+                  </td>
+                  <td className="px-6 py-5 text-sm font-medium text-purple-700 bg-purple-50/30">
+                    Monopolize market share & differentiate from amateur competitors.
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-900/40 to-transparent border border-indigo-500/20 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-indigo-400 flex items-center gap-3 mb-6">
-            <Users className="text-indigo-400 w-6 h-6" /> Final Recommendations
+        <div className="bg-gradient-to-br from-blue-950 to-[#0a1e3f] border border-blue-900 rounded-2xl p-6 sm:p-10 shadow-xl text-white relative overflow-hidden">
+          <div className="absolute right-0 top-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
+          
+          <h3 className="text-2xl font-bold flex items-center gap-3 mb-8 relative z-10 text-white border-b border-blue-800/50 pb-4">
+            <Users className="text-orange-400 w-7 h-7" /> The Executive Positioning Strategy
           </h3>
-          <ul className="space-y-4 text-slate-300">
-            <li className="flex gap-3"><span className="text-indigo-500 font-bold mt-0.5">•</span> <div><strong className="text-white">Leverage LinkedIn Credibility:</strong> Sync Meta Ad content with Piyush’s professional LinkedIn presence to maintain a consistent brand voice as a "Business Consultant," not just a service provider.</div></li>
-            <li className="flex gap-3"><span className="text-indigo-500 font-bold mt-0.5">•</span> <div><strong className="text-white">Focus on 'Verification':</strong> Given Piyush's 7+ year background in Background Verification, frame the 360-degree tours as a tool for "Verified Trust"—an essential asset for modern businesses.</div></li>
+          <ul className="space-y-6 text-slate-300 relative z-10 text-base sm:text-lg">
+            <li className="flex gap-4 items-start bg-blue-900/30 p-5 rounded-xl border border-blue-800/50">
+              <span className="text-orange-400 font-extrabold text-2xl mt-0 shadow-sm leading-none bg-blue-950 w-8 h-8 flex items-center justify-center rounded-full shrink-0">1</span> 
+              <div>
+                <strong className="text-white text-xl block mb-2">The "NITI Aayog" Ego & Authority Anchor</strong>
+                <p className="text-sm sm:text-base leading-relaxed text-blue-100">We do not market you as a "photographer." We position you explicitly as the <strong>NITI Aayog Accredited Tech Mentor</strong> who is helping digitize the Indian economy. Your face, your Ex-VP/CBO credentials, and your authority are the primary hooks that justify premium elite pricing to Tier-1 real estate developers.</p>
+              </div>
+            </li>
+            <li className="flex gap-4 items-start bg-blue-900/30 p-5 rounded-xl border border-blue-800/50">
+               <span className="text-orange-400 font-extrabold text-2xl mt-0 shadow-sm leading-none bg-blue-950 w-8 h-8 flex items-center justify-center rounded-full shrink-0">2</span> 
+              <div>
+                <strong className="text-white text-xl block mb-2">The "Verification" Narrative (Digital Truth)</strong>
+                <p className="text-sm sm:text-base leading-relaxed text-blue-100">You spent nearly a decade verifying people and minimizing risk for corporations. With JHA360, you are doing the <em>exact same thing</em> for local businesses: <strong>You are verifying their physical space.</strong> Our content strategy is designed to market you as the ultimate 'Digital Truth' in a world of fake reviews and manipulated photos.</p>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
