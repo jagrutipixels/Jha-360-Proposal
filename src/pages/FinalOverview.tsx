@@ -84,28 +84,6 @@ export default function FinalOverview({ navigate, previousPage }: { navigate: (i
         </div>
       </div>
 
-      {/* Footer Credits Element */}
-      <motion.footer 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        whileHover={{ y: -5 }}
-        className="mt-24 pt-12 border-t border-slate-100 text-center flex flex-col items-center gap-4 group cursor-default pb-8"
-      >
-        <div className="inline-flex flex-col items-center">
-          <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-3 group-hover:text-blue-500 transition-colors duration-500">
-            Strategically Designed By
-          </p>
-          <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full blur opacity-0 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-white border border-slate-100 px-8 py-3.5 rounded-full shadow-xs group-hover:shadow-md group-hover:border-orange-200/50 transition-all duration-500">
-              <span className="text-slate-500 text-sm font-medium flex items-center gap-2">
-                Designed by <strong className="text-blue-950 text-base tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-900 group-hover:to-orange-600 transition-all duration-500">Abhishek Gujar</strong>
-              </span>
-            </div>
-          </div>
-        </div>
-      </motion.footer>
     </div>
   );
 }
