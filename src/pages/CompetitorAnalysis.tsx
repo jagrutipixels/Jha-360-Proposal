@@ -1,25 +1,25 @@
 import React from 'react';
 import { Target, Search, CheckCircle, BarChart3, ChevronRight, ArrowRight } from 'lucide-react';
 
-export default function CompetitorAnalysis({ navigate }: { navigate: (id: number) => void }) {
+export default function CompetitorAnalysis({ navigate, previousPage }: { navigate: (id: number) => void, previousPage?: number | null }) {
   return (
     <div className="space-y-10">
-      <header className="space-y-4 border-b border-slate-200 pb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
+      <header className="space-y-4 border-b border-slate-200 pb-8 sm:pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 2
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Competitor Analysis</h2>
-        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-950 leading-tight">Competitor Analysis</h2>
+        <p className="text-slate-500 text-base sm:text-lg font-medium max-w-2xl leading-relaxed">
           360° Virtual Market Positioning for JHA360.
         </p>
       </header>
 
-      <section className="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <section className="bg-blue-50 border border-blue-100 rounded-2xl p-5 sm:p-8 shadow-sm">
         <h3 className="text-xl font-bold text-blue-950 flex items-center gap-2 mb-4">
-          <Search className="text-blue-500" /> Executive Summary
+          <Search className="text-blue-500 w-5 h-5 sm:w-6 sm:h-6" /> Executive Summary
         </h3>
-        <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
-          The virtual walkthrough market is evolving from simple photography to a critical "digital twin" requirement for local businesses. JHA360 differentiates itself by positioning these tours as high-conversion business assets rather than creative media. With a specialized track record of 27 projects across diverse sectors, JHA360 competes by offering <strong className="text-blue-950 bg-white px-2 py-0.5 rounded border border-slate-200 shadow-sm mx-1">"Business-First"</strong> immersive technology that focuses fiercely on measurable ROI and Google visibility.
+        <p className="text-slate-700 leading-relaxed text-sm sm:text-lg">
+          The virtual walkthrough market is evolving from simple photography to a critical "digital twin" requirement for local businesses. JHA360 differentiates itself by positioning these tours as high-conversion business assets rather than creative media. With a specialized track record of 27 projects across diverse sectors, JHA360 competes by offering <strong className="text-blue-950 bg-white px-2 py-0.5 rounded border border-slate-200 shadow-sm mx-1 italic sm:not-italic">"Business-First"</strong> immersive technology that focuses fiercely on measurable ROI and Google visibility.
         </p>
       </section>
 
@@ -84,13 +84,15 @@ export default function CompetitorAnalysis({ navigate }: { navigate: (id: number
       </div>
 
       <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-        <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50/50">
-          <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3">
-            <BarChart3 className="text-orange-500 w-6 h-6" /> Pricing & Value Benchmarking
+        <div className="p-5 sm:p-8 border-b border-slate-100 bg-slate-50/50">
+          <h3 className="text-xl sm:text-2xl font-bold text-blue-950 flex items-center gap-3">
+            <BarChart3 className="text-orange-500 w-5 h-5 sm:w-6 sm:h-6" /> Pricing & Value Benchmarking
           </h3>
-          <p className="text-slate-500 mt-2 text-sm max-w-3xl">This matrix defines how JHA360 justifies its price points compared to the broader market by always attaching a strategic "Value-Add" over raw deliverables.</p>
+          <p className="text-slate-500 mt-2 text-xs sm:text-sm max-w-3xl">This matrix defines how JHA360 justifies its price points compared to the broader market by always attaching a strategic "Value-Add" over raw deliverables.</p>
         </div>
-        <div className="overflow-x-auto w-full">
+
+        {/* Desktop Table */}
+        <div className="hidden md:block overflow-x-auto w-full">
           <table className="w-full text-left text-sm text-slate-600 min-w-[800px]">
             <thead className="bg-slate-50 text-slate-500 border-b border-slate-200 text-xs uppercase tracking-wider font-bold">
               <tr>
@@ -121,6 +123,30 @@ export default function CompetitorAnalysis({ navigate }: { navigate: (id: number
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile View */}
+        <div className="md:hidden divide-y divide-slate-100 bg-white">
+          {[
+            { segment: 'Boutique / Retail', price: '₹15k – ₹25k', deliverable: '5–10 Viewpoints', value: 'Native Google Maps SEO Optimization for localized search dominance.' },
+            { segment: 'Fitness / Leisure', price: '₹25k – ₹45k', deliverable: '15–25 Viewpoints + UI', value: 'Enhanced Customer Conversion mapping (Hotspots, direct links).' },
+            { segment: 'Real Estate / Resort', price: '₹60k – ₹1.5L+', deliverable: '40+ Viewpoints + Drone', value: 'Strategic Lead Gen Advisory & NRI-targeting Paid Media frameworks.' },
+          ].map((item, idx) => (
+            <div key={idx} className="p-5 space-y-4">
+              <div className="flex justify-between items-start">
+                <h4 className="font-bold text-slate-800 text-base">{item.segment}</h4>
+                <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">{item.price}</span>
+              </div>
+              <div className="space-y-2">
+                <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Standard Deliverable:</p>
+                <p className="text-xs text-slate-600">{item.deliverable}</p>
+              </div>
+              <div className="bg-orange-50/50 border border-orange-100 p-4 rounded-xl">
+                <p className="text-[10px] text-orange-600 font-extrabold uppercase tracking-widest mb-1">JHA360 Strategic Value-Add:</p>
+                <p className="text-sm font-bold text-orange-700 leading-snug">{item.value}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

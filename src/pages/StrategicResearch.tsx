@@ -1,36 +1,36 @@
 import React from 'react';
 import { Target, Users, LayoutDashboard, Award, ArrowRight, Lightbulb, TrendingUp } from 'lucide-react';
 
-export default function StrategicResearch({ navigate }: { navigate: (id: number) => void }) {
+export default function StrategicResearch({ navigate, previousPage }: { navigate: (id: number) => void, previousPage?: number | null }) {
   return (
     <div className="space-y-12">
-      <header className="space-y-4 border-b border-slate-200 pb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
+      <header className="space-y-4 border-b border-slate-200 pb-8 sm:pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 1
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Strategic Research Report</h2>
-        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-950 leading-tight">Strategic Research Report</h2>
+        <p className="text-slate-500 text-base sm:text-lg font-medium max-w-2xl leading-relaxed">
           Business Model Analysis and Meta Ad Action Plan to scale JHA360 across target corridors.
         </p>
       </header>
 
       <div className="grid grid-cols-1 gap-8">
-        <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-          <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
-            <Award className="text-orange-500 w-7 h-7" /> Leadership Profile: Ex-VP & NITI Aayog Mentor
+        <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 shadow-sm">
+          <h3 className="text-xl sm:text-2xl font-bold text-blue-950 flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <Award className="text-orange-500 w-6 h-6 sm:w-7 sm:h-7" /> Leadership Authority: Corporate & Institutional Depth
           </h3>
-          <p className="text-slate-600 mb-6 text-lg sm:text-xl font-medium leading-relaxed">
-            Piyush is not a small-time business owner; he is an Ex-Vice President and Ex-Chief Business Officer. By centering strategy around boardrooms, budgets, and enterprise data, we strip out trivial agency terminology.
+          <p className="text-slate-600 mb-6 text-base sm:text-xl font-medium leading-relaxed">
+            Piyush N Jha brings a wealth of executive expertise, having served as a Vice President and Chief Business Officer in the corporate sector. This strategic foundation allows JHA360 to deliver boardroom-grade solutions focused on measurable business outcomes.
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <ul className="space-y-4 text-slate-600">
-              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Professional DNA:</strong> Ex-VP and Regional Manager with almost 8 years handling Background Verification, Due Diligence, and Corporate Risk Mitigation.</div></li>
-              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Current Roles:</strong> Co-Founder & Managing Partner of New Bharat Skills. Visionary creator and lead strategist behind JHA360.</div></li>
-              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">The Authority Hook:</strong> Officially Accredited Mentor with AIC-BIMTECH under the prestigious Atal Innovation Mission (NITI Aayog).</div></li>
+              <li className="flex gap-3 sm:gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div className="text-sm sm:text-base"><strong className="text-slate-900 block mb-1">Professional Experience:</strong> Former Vice President and Chief Business Officer with extensive experience in Regional Management and Corporate Operations.</div></li>
+              <li className="flex gap-3 sm:gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div className="text-sm sm:text-base"><strong className="text-slate-900 block mb-1">Corporate DNA:</strong> Over 8 years specializing in Background Verification, Due Diligence, and Corporate Risk Mitigation protocol.</div></li>
+              <li className="flex gap-3 sm:gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div className="text-sm sm:text-base"><strong className="text-slate-900 block mb-1">Institutional Authority:</strong> Officially Accredited Mentor with AIC-BIMTECH under the prestigious Atal Innovation Mission (NITI Aayog).</div></li>
             </ul>
             <ul className="space-y-4 text-slate-600">
-              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Core Metrics Focus:</strong> Customer Acquisition Cost (CAC), pipeline conversion rates, and dramatically accelerating Lead Velocity by removing offline friction.</div></li>
-              <li className="flex gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div><strong className="text-slate-900 block mb-1">Recent Execution:</strong> Engineered and delivered 27 high-fidelity immersive projects within recent months across real estate, premium gyms, and corporate campuses.</div></li>
+              <li className="flex gap-3 sm:gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div className="text-sm sm:text-base"><strong className="text-slate-900 block mb-1">Strategic Focus:</strong> Optimizing Customer Acquisition Cost (CAC), accelerating Lead Velocity, and removing digital conversion friction.</div></li>
+              <li className="flex gap-3 sm:gap-4"><div className="w-1.5 h-1.5 mt-2 rounded-full bg-orange-500 shrink-0"></div> <div className="text-sm sm:text-base"><strong className="text-slate-900 block mb-1">Operational Track Record:</strong> Delivered 27 high-fidelity immersive projects within recent months across real estate and corporate sectors.</div></li>
             </ul>
           </div>
         </div>
@@ -99,10 +99,12 @@ export default function StrategicResearch({ navigate }: { navigate: (id: number)
         </div>
 
         <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-          <h3 className="text-2xl font-bold text-blue-950 flex items-center gap-3 mb-8">
-            <Target className="text-emerald-500 w-7 h-7" /> Strategic Implementation Roadmap
+          <h3 className="text-xl sm:text-2xl font-bold text-blue-950 flex items-center gap-3 mb-8">
+            <Target className="text-emerald-500 w-6 h-6 sm:w-7 sm:h-7" /> Strategic Implementation Roadmap
           </h3>
-          <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-inner">
+          
+          {/* Desktop Table */}
+          <div className="hidden lg:block overflow-x-auto rounded-xl border border-slate-200 shadow-inner">
             <table className="w-full text-left text-sm text-slate-600 min-w-[700px]">
               <thead className="bg-slate-50 text-slate-500 border-b border-slate-200 text-xs uppercase tracking-wider font-bold">
                 <tr>
@@ -151,6 +153,51 @@ export default function StrategicResearch({ navigate }: { navigate: (id: number)
               </tbody>
             </table>
           </div>
+
+          {/* Mobile Card Layout for Table */}
+          <div className="lg:hidden space-y-4">
+            <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+              <div className="bg-slate-50 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                <strong className="text-slate-900">Phase 1: Production</strong>
+                <span className="text-orange-500 font-bold text-[10px] bg-orange-50 px-2 py-0.5 rounded">Weeks 1-3</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <p className="text-sm text-slate-600 leading-relaxed">Capture raw, authentic "Behind the Scenes" footage of Piyush on-site assembling 360 gear, directly guiding teams, and securing final shots. Build the content repository required for the 5-Level Meta Ads playbook.</p>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-slate-400">Primary Goal:</span>
+                  <span className="text-xs font-bold text-blue-900 bg-blue-50 px-2 py-0.5 rounded">Establish Authority</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+              <div className="bg-slate-50 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                <strong className="text-slate-900">Phase 2: Launch</strong>
+                <span className="text-orange-500 font-bold text-[10px] bg-orange-50 px-2 py-0.5 rounded">Weeks 4-8</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <p className="text-sm text-slate-600 leading-relaxed">Deploy highly-segmented "Niche-Specific" ad funnels targeting Real Estate and Hospitality. Utilize precision audience building across Mumbai/Pune target corridors.</p>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-slate-400">Primary Goal:</span>
+                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Lead Generation</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+              <div className="bg-slate-50 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                <strong className="text-slate-900">Phase 3: Scaling</strong>
+                <span className="text-orange-500 font-bold text-[10px] bg-orange-50 px-2 py-0.5 rounded">Month 3+</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <p className="text-sm text-slate-600 leading-relaxed">Aggressively leverage the "Official Google Street View Trusted" badge as a primary psychological hook. Scale ad spend vertically on winning creatives.</p>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-slate-400">Primary Goal:</span>
+                  <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Monopolize Share</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="bg-gradient-to-br from-blue-950 to-[#0a1e3f] border border-blue-900 rounded-2xl p-6 sm:p-10 shadow-xl text-white relative overflow-hidden">
@@ -163,8 +210,8 @@ export default function StrategicResearch({ navigate }: { navigate: (id: number)
             <li className="flex gap-4 items-start bg-blue-900/30 p-5 rounded-xl border border-blue-800/50">
               <span className="text-orange-400 font-extrabold text-2xl mt-0 shadow-sm leading-none bg-blue-950 w-8 h-8 flex items-center justify-center rounded-full shrink-0">1</span> 
               <div>
-                <strong className="text-white text-xl block mb-2">The "NITI Aayog" Ego & Authority Anchor</strong>
-                <p className="text-sm sm:text-base leading-relaxed text-blue-100">We do not market you as a "photographer." We position you explicitly as the <strong>NITI Aayog Accredited Tech Mentor</strong> who is helping digitize the Indian economy. Your face, your Ex-VP/CBO credentials, and your authority are the primary hooks that justify premium elite pricing to Tier-1 real estate developers.</p>
+                <strong className="text-white text-xl block mb-2">The "NITI Aayog" Institutional Authority</strong>
+                <p className="text-sm sm:text-base leading-relaxed text-blue-100">By positioning the brand through the lens of a NITI Aayog Accredited Mentor, we elevate JHA360 from a service provider to a strategic digital transformation partner. This institutional credibility justifies premium positioning for Tier-1 developers and major corporate entities.</p>
               </div>
             </li>
             <li className="flex gap-4 items-start bg-blue-900/30 p-5 rounded-xl border border-blue-800/50">

@@ -7,12 +7,12 @@ export default function SEOAudit({ navigate, previousPage }: { navigate: (id: nu
 
   return (
     <div className="space-y-10">
-      <header className="space-y-4 border-b border-slate-200 pb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
+      <header className="space-y-4 border-b border-slate-200 pb-8 sm:pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 4
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Website & SEO Audit</h2>
-        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-950 leading-tight">Website & SEO Audit</h2>
+        <p className="text-slate-500 text-base sm:text-lg font-medium max-w-2xl leading-relaxed">
           Critical gap analysis of JHA360.com to ensure organic traffic capture matches paid ad momentum.
         </p>
       </header>
@@ -76,19 +76,19 @@ export default function SEOAudit({ navigate, previousPage }: { navigate: (id: nu
           <p className="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">Business owners rarely wake up and explicitly search for "360 photographers". They search for their underlying business problem: <em className="text-slate-800 font-semibold bg-orange-50 px-1">"Why isn't my business showing up on Google Maps?"</em> We must intercept those queries.</p>
           <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-6 shadow-inner">
             <div className="bg-white p-5 rounded-lg border border-blue-100 shadow-sm">
-              <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-widest mb-2 bg-blue-100 px-2 py-1 rounded inline-block">Content Pillar A</p>
-              <h4 className="font-bold text-blue-950 text-lg mb-2">Educational Blog Pipeline</h4>
+              <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-widest mb-2 bg-blue-100 px-2 py-1 rounded inline-block">TOFU: Awareness Pipeline</p>
+              <h4 className="font-bold text-blue-950 text-lg mb-2">Educational Blog Pillar</h4>
               <ul className="mt-2 text-sm text-slate-600 space-y-1.5 list-disc pl-5">
                 <li>"How to Optimize Google Business Profile in 2026 for Restaurants"</li>
                 <li>"The Exact ROI of Google Street View for Mumbai Retailers"</li>
               </ul>
             </div>
             <div className="bg-white p-5 rounded-lg border border-blue-100 shadow-sm">
-              <p className="text-[10px] font-extrabold text-blue-800 uppercase tracking-widest mb-2 bg-blue-100 px-2 py-1 rounded inline-block">Content Pillar B</p>
-              <h4 className="font-bold text-blue-950 text-lg mb-2">Case Study Proof Integration</h4>
+              <p className="text-[10px] font-extrabold text-orange-800 uppercase tracking-widest mb-2 bg-orange-100 px-2 py-1 rounded inline-block">MOFU/BOFU: Proof Integration</p>
+              <h4 className="font-bold text-blue-950 text-lg mb-2">Case Study Proof Engine</h4>
               <ul className="mt-2 text-sm text-slate-600 space-y-1.5 list-disc pl-5">
                 <li>Deep-dive qualitative breakdowns of the 27 successful past projects.</li>
-                <li>Dashboard screenshots highlighting specific metric jumps (e.g., +28% visibility in 30 days).</li>
+                <li>Dashboard screenshots highlighting specific metric jumps (e.g., +28% visibility).</li>
               </ul>
             </div>
           </div>

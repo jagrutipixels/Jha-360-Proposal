@@ -1,15 +1,16 @@
 import React from 'react';
 import { Target, TrendingUp, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export default function FinalOverview({ navigate, previousPage }: { navigate: (id: number) => void, previousPage?: number | null }) {
   return (
     <div className="space-y-10">
-      <header className="space-y-4 border-b border-slate-200 pb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold tracking-wider rounded-full uppercase border border-orange-200">
+      <header className="space-y-4 border-b border-slate-200 pb-8 sm:pb-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wider rounded-full uppercase border border-orange-200">
           Module 5
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-blue-950">Executive Summary</h2>
-        <p className="text-slate-500 text-lg font-medium max-w-2xl leading-relaxed">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-blue-950 leading-tight">Executive Summary</h2>
+        <p className="text-slate-500 text-base sm:text-lg font-medium max-w-2xl leading-relaxed">
           The comprehensive roadmap to scale JHA360's operations, lower client CAC, and dominate the digital truth market.
         </p>
       </header>
@@ -23,14 +24,14 @@ export default function FinalOverview({ navigate, previousPage }: { navigate: (i
           <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 shadow-inner">
             <h4 className="font-bold text-blue-900 mb-2">1. Authority Positioning</h4>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Pivot from "creative agency" to <strong>Corporate Risk Mitigation</strong>. We leverage Piyush's Ex-VP background and NITI Aayog credentials to justify premium enterprise retainers over amateur local competitors.
+              Pivot from "creative agency" to <strong>Strategic Digital Transformation Partner</strong>. We leverage the executive-level professional background and NITI Aayog credentials to establish institutional trust that far exceeds standard local photography services.
             </p>
           </div>
           
           <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 shadow-inner">
-            <h4 className="font-bold text-blue-900 mb-2">2. The 5-Level Funnel</h4>
+            <h4 className="font-bold text-blue-900 mb-2">2. The TOFU - BOFU Funnel</h4>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Deploy specific cinematic hooks (Digital Window, Blindfold, Screen Dive) matched perfectly to target corridors (Real Estate, Gyms, Banquets) to aggressively accelerate <strong>Lead Velocity</strong>.
+              Deploy specific cinematic hooks (Digital Window, Blindfold, Screen Dive) matched to the TOFU, MOFU, and BOFU stages to aggressively accelerate <strong>Lead Velocity</strong> and conversion.
             </p>
           </div>
           
@@ -84,11 +85,27 @@ export default function FinalOverview({ navigate, previousPage }: { navigate: (i
       </div>
 
       {/* Footer Credits Element */}
-      <footer className="mt-24 pt-8 border-t border-slate-200 text-center animate-in fade-in duration-700">
-        <p className="text-slate-500 text-sm font-medium">
-          Designed by <strong className="text-blue-950 text-base">Abhishek Gujar</strong>
-        </p>
-      </footer>
+      <motion.footer 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        whileHover={{ y: -5 }}
+        className="mt-24 pt-12 border-t border-slate-100 text-center flex flex-col items-center gap-4 group cursor-default pb-8"
+      >
+        <div className="inline-flex flex-col items-center">
+          <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-3 group-hover:text-blue-500 transition-colors duration-500">
+            Strategically Designed By
+          </p>
+          <div className="relative">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full blur opacity-0 group-hover:opacity-20 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative bg-white border border-slate-100 px-8 py-3.5 rounded-full shadow-xs group-hover:shadow-md group-hover:border-orange-200/50 transition-all duration-500">
+              <span className="text-slate-500 text-sm font-medium flex items-center gap-2">
+                Designed by <strong className="text-blue-950 text-base tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-900 group-hover:to-orange-600 transition-all duration-500">Abhishek Gujar</strong>
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.footer>
     </div>
   );
 }
